@@ -26,8 +26,10 @@ DEFAULT = [name for name in SETUPS if name not in HAVE_FINAL]
 SUMMARY = ROOT/'outputs/cv5/summary/summary.json'
 
 
-def cv_epoch(setup):
+def cv_epoch(setup, given=None):
     rows = {row['setup']: row for row in read(SUMMARY)} if SUMMARY.exists() else {}
+    if given and setup in given:  # CV ran on another machine: its best epoch is passed in, not looked up
+        return given[setup], rows.get(setup, dict(map=None, map50=None))
     if setup not in rows:
         raise SystemExit(f'{setup} is not in {SUMMARY}. Rebuild it for every setup first: python scripts/cv5.py summary')
     stage, epoch = rows[setup]['epoch'].split('_')
@@ -122,12 +124,18 @@ def test_retinanet(run, base, device):
 TESTS = dict(ssd=test_ssd, yolos=test_yolos, retinanet=test_retinanet)
 
 
-def run_setup(setup, device, quick):
-    epoch, cv = cv_epoch(setup)
+def number(value):
+    return '  -  ' if value is None else f'{value:.3f}'
+
+
+def run_setup(setup, device, quick, given=None):
+    epoch, cv = cv_epoch(setup, given)
     base, run = folders(setup, quick)
-    print(f'===== {setup}: stage B epoch {epoch} from CV (CV mAP {cv["map"]:.3f}), cutoff {CUTOFF}', flush=True)
-    write(base/'selection.json', dict(setup=setup, stage_b_epoch=epoch, cutoff=CUTOFF, cv_map=cv['map'], cv_map50=cv['map50'],
-                                      rule='best pooled CV mAP epoch, fixed before the test run'))
+    rule = 'best pooled CV mAP epoch, fixed before the test run'
+    if given and setup in given:
+        rule += '; CV ran on another machine, epoch given on the command line'
+    print(f'===== {setup}: stage B epoch {epoch} from CV (CV mAP {number(cv["map"])}), cutoff {CUTOFF}', flush=True)
+    write(base/'selection.json', dict(setup=setup, stage_b_epoch=epoch, cutoff=CUTOFF, cv_map=cv['map'], cv_map50=cv['map50'], rule=rule))
     prepare(base, SETUPS[setup]['data'])
     config = write_config(base, setup, epoch, quick)
     train(run, *train_command(setup, config, run, device))
@@ -142,10 +150,15 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--setups', nargs='+', choices=DEFAULT, default=DEFAULT)
     p.add_argument('--device', choices=['cpu', 'cuda'], default='cuda'); p.add_argument('--quick', action='store_true', help='Two-epoch check in separate folders')
+    p.add_argument('--epochs', nargs='+', default=[], metavar='SETUP=EPOCH',
+                   help='Best CV stage B epoch for a setup whose cross-validation ran on another machine, e.g. ssd_v2_weighted=9')
     args = p.parse_args(); results, failed = [], []
+    given = {name: int(epoch) for name, epoch in (item.split('=') for item in args.epochs)}
+    if set(given)-set(SETUPS):
+        raise SystemExit(f'Unknown setup in --epochs: {sorted(set(given)-set(SETUPS))}')
     for setup in args.setups:
         try:
-            results.append(run_setup(setup, args.device, args.quick))
+            results.append(run_setup(setup, args.device, args.quick, given))
         except (Exception, SystemExit) as error:
             print(f'FAILED: {setup}: {error}', flush=True); failed.append(setup)
     summary = ROOT/'outputs'/('final_runs_quick' if args.quick else 'final_runs')/'summary.json'
@@ -153,7 +166,7 @@ def main():
     old.update({row['setup']: row for row in results}); write(summary, list(old.values()))
     print('\nsetup                       epoch  CV mAP  CV mAP50  test mAP  test mAP50  correct  false')
     for row in old.values():
-        print(f"{row['setup']:27} B_{row['stage_b_epoch']:03d}  {row['cv_map']:.3f}   {row['cv_map50']:.3f}     {row['test_map']:.3f}     {row['test_map50']:.3f}"
+        print(f"{row['setup']:27} B_{row['stage_b_epoch']:03d}  {number(row['cv_map'])}   {number(row['cv_map50'])}     {row['test_map']:.3f}     {row['test_map50']:.3f}"
               f"      {row['correct']}/{row['boxes']}     {row['false_boxes']}")
     print('FAILED SETUPS: '+', '.join(failed) if failed else 'FINAL TESTS ENDED WITH NO FAILURES', flush=True)
     return 1 if failed else 0
