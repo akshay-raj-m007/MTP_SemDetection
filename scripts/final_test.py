@@ -13,7 +13,7 @@ sys.path.insert(0, str(_ProjectPath(__file__).resolve().parents[1]))
 
 import argparse
 import subprocess
-from cv5 import SETUPS, SOURCES, YOLOS_SCHEDULE, ssd_python
+from cv5 import SETUPS, SOURCES, schedule, ssd_python
 from final_ssd import CUTOFF, ENTRY, QUICK, report, train
 from make_cv_folds import final_plan
 from sem_yolos.common import ROOT, prepared_fingerprint, read, write
@@ -57,8 +57,7 @@ def prepare(base, data):
 
 def write_config(base, setup, epoch, quick):
     config = read(ROOT/SETUPS[setup]['config'])
-    if SETUPS[setup]['model'] == 'yolos':
-        config.update(YOLOS_SCHEDULE)  # the same schedule cross-validation ran
+    config.update(schedule(setup))  # the same schedule cross-validation ran
     config.update(prepared=(base/'prepared').relative_to(ROOT).as_posix(), fixed_schedule=True, final_stage_b_epoch=1 if quick else epoch)
     if quick:
         config.update(QUICK)

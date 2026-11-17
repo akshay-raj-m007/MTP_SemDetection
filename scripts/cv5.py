@@ -32,6 +32,9 @@ SETUPS = dict(
     yolos_v2=dict(model='yolos', data='v2', config='configs/pipeline_config_20_views.json'),
     yolos_pitch32_weighted=dict(model='yolos', data='pitch32', sampling='weighted', config='configs/pipeline_config_pitch32_weighted.json'),
     yolos_v2_weighted=dict(model='yolos', data='v2', sampling='weighted', config='configs/pipeline_config_20_views_weighted_balanced.json'),
+    # YOLOS on the SSD/RetinaNet weighted setup: weighting power .5 cap 3, 40 stage B epochs, v2 canvas 320.
+    yolos_pitch32_weighted_matched=dict(model='yolos', data='pitch32', sampling='weighted', schedule='full', config='configs/yolos_pitch32_weighted_matched.json'),
+    yolos_v2_weighted_matched=dict(model='yolos', data='v2', sampling='weighted', schedule='full', config='configs/yolos_v2_weighted_matched.json'),
     # CNN baseline: same data, folds, schedule and weighting as SSD weighted; only the detector differs.
     retinanet_pitch32_weighted=dict(model='retinanet', data='pitch32', sampling='weighted', config='configs/retinanet_pitch32_weighted.json'),
     retinanet_v2_weighted=dict(model='retinanet', data='v2', sampling='weighted', config='configs/retinanet_v2_weighted.json'),
@@ -39,6 +42,11 @@ SETUPS = dict(
 # YOLOS peaked by stage B epoch 13 in every earlier run, and no fold may stop early.
 YOLOS_SCHEDULE = dict(stage_b_epochs=15, patience=999)
 QUICK = dict(stage_a_epochs=1, stage_b_epochs=1, training_view_mode='random_augmented')
+
+
+def schedule(setup):
+    """Schedule overrides for a setup: the short YOLOS schedule, unless the setup keeps its config's full schedule."""
+    return YOLOS_SCHEDULE if SETUPS[setup]['model'] == 'yolos' and SETUPS[setup].get('schedule') != 'full' else {}
 
 
 def ssd_python():
@@ -61,8 +69,7 @@ class Runs:
         path = self.base/'configs'/f'{setup}_fold{fold}.json'
         config = read(ROOT/SETUPS[setup]['config'])
         config.update(prepared=self.prepared(SETUPS[setup]['data'], fold), fixed_schedule=True)
-        if SETUPS[setup]['model'] == 'yolos':
-            config.update(YOLOS_SCHEDULE)
+        config.update(schedule(setup))
         if self.quick:
             config.update(QUICK)
         write(path, config)
