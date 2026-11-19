@@ -1,0 +1,13 @@
+setup,model,images,sampling,size,sampling_power,sampling_cap,stage_b_epochs,cv_epoch,cv_map,cv_map50,cv_found_05,cv_found_30,cv_boxes,test_epoch,test_map,test_map50,test_found,test_boxes,test_false
+ssd_pitch32,ssd,pitch32,natural,640,0.5,3.0,40,,,,,,,,,,,,
+ssd_v2,ssd,v2,natural,320,0.5,3.0,40,,,,,,,,,,,,
+ssd_pitch32_weighted,ssd,pitch32,weighted,640,0.5,3.0,40,,,,,,,37,0.09975801523156316,0.19925141644412073,2,9,10
+ssd_v2_weighted,ssd,v2,weighted,320,0.5,3.0,40,,,,,,,9,0.024890661683589044,0.07154100535400665,2,9,39
+yolos_pitch32,yolos,pitch32,natural,640,0.5,3.0,15,,,,,,,,,,,,
+yolos_v2,yolos,v2,natural,512,0.5,3.0,15,,,,,,,,,,,,
+yolos_pitch32_weighted,yolos,pitch32,weighted,640,1.0,5.0,15,,,,,,,,,,,,
+yolos_v2_weighted,yolos,v2,weighted,512,1.0,5.0,15,,,,,,,,,,,,
+yolos_pitch32_weighted_matched,yolos,pitch32,weighted,640,0.5,3.0,40,B_011,0.1831470890678942,0.3248538053407486,34,22,61,11,0.031630570347974674,0.06498595071336187,0,9,3
+yolos_v2_weighted_matched,yolos,v2,weighted,320,0.5,3.0,40,B_020,0.1509027222788981,0.2476753213651302,27,19,61,20,0.143915894894619,0.269767138004123,3,9,7
+retinanet_pitch32_weighted,retinanet,pitch32,weighted,640,0.5,3.0,40,,,,,,,,,,,,
+retinanet_v2_weighted,retinanet,v2,weighted,320,0.5,3.0,40,,,,,,,,,,,,

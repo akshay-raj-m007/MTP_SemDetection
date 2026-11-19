@@ -1,0 +1,8 @@
+{
+  "setup": "ssd_pitch32_weighted",
+  "stage_b_epoch": 37,
+  "cutoff": 0.5,
+  "cv_map": null,
+  "cv_map50": null,
+  "rule": "best pooled CV mAP epoch, fixed before the test run; CV ran on another machine, epoch given on the command line"
+}

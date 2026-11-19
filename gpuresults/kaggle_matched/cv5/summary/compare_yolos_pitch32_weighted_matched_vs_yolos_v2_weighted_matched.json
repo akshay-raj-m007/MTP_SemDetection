@@ -1,0 +1,30 @@
+{
+  "first": "yolos_pitch32_weighted_matched",
+  "second": "yolos_v2_weighted_matched",
+  "epochs": [
+    "B_011",
+    "B_020"
+  ],
+  "units": 42,
+  "images": 82,
+  "resamples_used": 2000,
+  "seed": 0,
+  "folds_won_by_first": 3,
+  "folds": 5,
+  "map": {
+    "difference": 0.032244366788996115,
+    "interval_95": [
+      -0.06717936663265174,
+      0.11436373384221726
+    ],
+    "share_first_better": 0.801
+  },
+  "map50": {
+    "difference": 0.07717848397561838,
+    "interval_95": [
+      -0.05009754508586446,
+      0.19848219236295028
+    ],
+    "share_first_better": 0.9145
+  }
+}

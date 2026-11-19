@@ -1,0 +1,13 @@
+{
+  "commit": "870de15",
+  "ssd_epochs_from_ssl30": {
+    "ssd_pitch32_weighted": 37,
+    "ssd_v2_weighted": 9
+  },
+  "matched_setups": [
+    "yolos_pitch32_weighted_matched",
+    "yolos_v2_weighted_matched"
+  ],
+  "gpu": "Tesla T4\nTesla T4",
+  "note": "SSD weighted CV ran on ssl30; its finals and all matched YOLOS work ran on Kaggle (torch 2.5.1)."
+}

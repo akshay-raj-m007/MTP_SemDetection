@@ -1,0 +1,18 @@
+{
+  "stage": "A",
+  "epoch": 10,
+  "map": -1.0,
+  "losses": {
+    "total_loss": 1.4132049692649735,
+    "reg_loss": 0.44577280418383786,
+    "cls_loss": 0.9674321640970815,
+    "empty_background_loss": 0.053033772384386585
+  },
+  "presentations": 1722,
+  "optimizer_updates": 216,
+  "optimizer_update_opportunities": 216,
+  "total_updates": 2160,
+  "total_presentations": 17220,
+  "epoch_seconds": 69.66516095400038,
+  "peak_memory_bytes": 44152320
+}

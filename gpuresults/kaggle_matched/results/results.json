@@ -1,0 +1,610 @@
+{
+  "provenance": {
+    "generated": "2026-11-18T10:41:25",
+    "machine": "d37f21d91364",
+    "git_commit": "870de15cef8a79f1224cd215e276b5e67241e8b0",
+    "git_branch": "relabel-v2",
+    "uncommitted_changes": false
+  },
+  "notes": {
+    "cv": "Pooled out-of-fold predictions over 5 grouped folds of the 82 train+val images (61 boxes), best pooled-mAP stage B epoch.",
+    "test": "One run on the 13 test images (9 boxes) after training on all train+val; boxes found at the cutoff score, IoU .5, class must match.",
+    "comparisons": "Paired grouped bootstrap of pooled CV predictions; supported means the whole 95% interval is above zero."
+  },
+  "setups": {
+    "ssd_pitch32": {
+      "settings": {
+        "model": "ssd",
+        "images": "pitch32",
+        "sampling": "natural",
+        "config": "experiments/mobilevitv2_ssd/configs/pitch32_natural.json",
+        "size": 640,
+        "native_pitch": true,
+        "tile_overlap": 320,
+        "resize_mode": "pad",
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    },
+    "ssd_v2": {
+      "settings": {
+        "model": "ssd",
+        "images": "v2",
+        "sampling": "natural",
+        "config": "experiments/mobilevitv2_ssd/configs/natural.json",
+        "size": 320,
+        "native_pitch": null,
+        "tile_overlap": null,
+        "resize_mode": "letterbox",
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    },
+    "ssd_pitch32_weighted": {
+      "settings": {
+        "model": "ssd",
+        "images": "pitch32",
+        "sampling": "weighted",
+        "config": "experiments/mobilevitv2_ssd/configs/pitch32_weighted.json",
+        "size": 640,
+        "native_pitch": true,
+        "tile_overlap": 320,
+        "resize_mode": "pad",
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": {
+        "stage_b_epoch": 37,
+        "epoch_rule": "best pooled CV mAP epoch, fixed before the test run; CV ran on another machine, epoch given on the command line",
+        "cutoff": 0.5,
+        "map": 0.09975801523156316,
+        "map50": 0.19925141644412073,
+        "per_class": {
+          "bridge": {
+            "ap": 0.26345337830486343,
+            "ap50": 0.5076705472745077
+          },
+          "gap": {
+            "ap": 0.0,
+            "ap50": 0.0
+          },
+          "line_collapse": {
+            "ap": 0.010578682621389196,
+            "ap50": 0.03933511850197527
+          },
+          "multi_bridge": {
+            "ap": 0.125,
+            "ap50": 0.25
+          }
+        },
+        "boxes": 9,
+        "boxes_found": 2,
+        "false_boxes": 10,
+        "per_class_found": {
+          "bridge": {
+            "found": 1,
+            "boxes": 3
+          },
+          "gap": {
+            "found": 0,
+            "boxes": 1
+          },
+          "line_collapse": {
+            "found": 0,
+            "boxes": 4
+          },
+          "multi_bridge": {
+            "found": 1,
+            "boxes": 1
+          }
+        },
+        "clean_images_with_false_box": 0.2
+      },
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup"
+    },
+    "ssd_v2_weighted": {
+      "settings": {
+        "model": "ssd",
+        "images": "v2",
+        "sampling": "weighted",
+        "config": "experiments/mobilevitv2_ssd/configs/weighted.json",
+        "size": 320,
+        "native_pitch": null,
+        "tile_overlap": null,
+        "resize_mode": "letterbox",
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": {
+        "stage_b_epoch": 9,
+        "epoch_rule": "best pooled CV mAP epoch, fixed before the test run; CV ran on another machine, epoch given on the command line",
+        "cutoff": 0.5,
+        "map": 0.024890661683589044,
+        "map50": 0.07154100535400665,
+        "per_class": {
+          "bridge": {
+            "ap": 0.004835208473288674,
+            "ap50": 0.016117361577628917
+          },
+          "gap": {
+            "ap": 0.0,
+            "ap50": 0.0
+          },
+          "line_collapse": {
+            "ap": 0.014727438261067488,
+            "ap50": 0.07004665983839763
+          },
+          "multi_bridge": {
+            "ap": 0.08000000000000002,
+            "ap50": 0.19999999999999996
+          }
+        },
+        "boxes": 9,
+        "boxes_found": 2,
+        "false_boxes": 39,
+        "per_class_found": {
+          "bridge": {
+            "found": 0,
+            "boxes": 3
+          },
+          "gap": {
+            "found": 0,
+            "boxes": 1
+          },
+          "line_collapse": {
+            "found": 1,
+            "boxes": 4
+          },
+          "multi_bridge": {
+            "found": 1,
+            "boxes": 1
+          }
+        },
+        "clean_images_with_false_box": 0.6
+      },
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup"
+    },
+    "yolos_pitch32": {
+      "settings": {
+        "model": "yolos",
+        "images": "pitch32",
+        "sampling": "natural",
+        "config": "configs/pipeline_config_pitch32.json",
+        "size": 640,
+        "native_pitch": true,
+        "tile_overlap": 320,
+        "resize_mode": null,
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 15,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    },
+    "yolos_v2": {
+      "settings": {
+        "model": "yolos",
+        "images": "v2",
+        "sampling": "natural",
+        "config": "configs/pipeline_config_20_views.json",
+        "size": 512,
+        "native_pitch": null,
+        "tile_overlap": null,
+        "resize_mode": null,
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 15,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    },
+    "yolos_pitch32_weighted": {
+      "settings": {
+        "model": "yolos",
+        "images": "pitch32",
+        "sampling": "weighted",
+        "config": "configs/pipeline_config_pitch32_weighted.json",
+        "size": 640,
+        "native_pitch": true,
+        "tile_overlap": 320,
+        "resize_mode": null,
+        "sampling_power": 1.0,
+        "sampling_cap": 5.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 15,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    },
+    "yolos_v2_weighted": {
+      "settings": {
+        "model": "yolos",
+        "images": "v2",
+        "sampling": "weighted",
+        "config": "configs/pipeline_config_20_views_weighted_balanced.json",
+        "size": 512,
+        "native_pitch": null,
+        "tile_overlap": null,
+        "resize_mode": null,
+        "sampling_power": 1.0,
+        "sampling_cap": 5.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 15,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    },
+    "yolos_pitch32_weighted_matched": {
+      "settings": {
+        "model": "yolos",
+        "images": "pitch32",
+        "sampling": "weighted",
+        "config": "configs/yolos_pitch32_weighted_matched.json",
+        "size": 640,
+        "native_pitch": true,
+        "tile_overlap": 320,
+        "resize_mode": null,
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": {
+        "best_epoch": "B_011",
+        "map": 0.1831470890678942,
+        "map50": 0.3248538053407486,
+        "per_fold_map": [
+          0.023630958974062633,
+          0.09237905497866859,
+          0.2957695769576958,
+          0.26617502915705105,
+          0.26607289568287146
+        ],
+        "boxes": 61,
+        "boxes_found_at_score_05": 34,
+        "boxes_found_at_score_30": 22,
+        "per_class": {
+          "bridge": {
+            "ap": 0.07347727234939053,
+            "ap50": 0.1647128244643149,
+            "boxes": 22
+          },
+          "gap": {
+            "ap": 0.0006632547312702285,
+            "ap50": 0.003698920616699351,
+            "boxes": 13
+          },
+          "line_collapse": {
+            "ap": 0.11075302030116001,
+            "ap50": 0.256507061123223,
+            "boxes": 17
+          },
+          "multi_bridge": {
+            "ap": 0.547694808889756,
+            "ap50": 0.8744964151587573,
+            "boxes": 9
+          }
+        }
+      },
+      "test": {
+        "stage_b_epoch": 11,
+        "epoch_rule": "best pooled CV mAP epoch, fixed before the test run",
+        "cutoff": 0.5,
+        "map": 0.031630570347974674,
+        "map50": 0.06498595071336187,
+        "per_class": {
+          "bridge": {
+            "ap": 0.1240842815893227,
+            "ap50": 0.24947215218416252
+          },
+          "gap": {
+            "ap": 0.0,
+            "ap50": 0.0
+          },
+          "line_collapse": {
+            "ap": 0.0024379998025759746,
+            "ap50": 0.010471650669284967
+          },
+          "multi_bridge": {
+            "ap": 0.0,
+            "ap50": 0.0
+          }
+        },
+        "boxes": 9,
+        "boxes_found": 0,
+        "false_boxes": 3,
+        "per_class_found": {
+          "bridge": {
+            "found": 0,
+            "boxes": 3
+          },
+          "gap": {
+            "found": 0,
+            "boxes": 1
+          },
+          "line_collapse": {
+            "found": 0,
+            "boxes": 4
+          },
+          "multi_bridge": {
+            "found": 0,
+            "boxes": 1
+          }
+        },
+        "clean_images_with_false_box": 0.0
+      }
+    },
+    "yolos_v2_weighted_matched": {
+      "settings": {
+        "model": "yolos",
+        "images": "v2",
+        "sampling": "weighted",
+        "config": "configs/yolos_v2_weighted_matched.json",
+        "size": 320,
+        "native_pitch": null,
+        "tile_overlap": null,
+        "resize_mode": null,
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": {
+        "best_epoch": "B_020",
+        "map": 0.1509027222788981,
+        "map50": 0.2476753213651302,
+        "per_fold_map": [
+          0.1072135785007072,
+          0.03999797724178571,
+          0.2112094689517834,
+          0.20602097712266723,
+          0.29163134254302137
+        ],
+        "boxes": 61,
+        "boxes_found_at_score_05": 27,
+        "boxes_found_at_score_30": 19,
+        "per_class": {
+          "bridge": {
+            "ap": 0.03969471607164798,
+            "ap50": 0.11178620685725857,
+            "boxes": 22
+          },
+          "gap": {
+            "ap": 0.0,
+            "ap50": 0.0,
+            "boxes": 13
+          },
+          "line_collapse": {
+            "ap": 0.06472417019704306,
+            "ap50": 0.13784333985043973,
+            "boxes": 17
+          },
+          "multi_bridge": {
+            "ap": 0.49919200284690124,
+            "ap50": 0.7410717387528223,
+            "boxes": 9
+          }
+        }
+      },
+      "test": {
+        "stage_b_epoch": 20,
+        "epoch_rule": "best pooled CV mAP epoch, fixed before the test run",
+        "cutoff": 0.5,
+        "map": 0.143915894894619,
+        "map50": 0.269767138004123,
+        "per_class": {
+          "bridge": {
+            "ap": 0.2751653362057517,
+            "ap50": 0.5774077407740775
+          },
+          "gap": {
+            "ap": 0.0,
+            "ap50": 0.0
+          },
+          "line_collapse": {
+            "ap": 0.0004982433727243692,
+            "ap50": 0.0016608112424145642
+          },
+          "multi_bridge": {
+            "ap": 0.3,
+            "ap50": 0.5
+          }
+        },
+        "boxes": 9,
+        "boxes_found": 3,
+        "false_boxes": 7,
+        "per_class_found": {
+          "bridge": {
+            "found": 2,
+            "boxes": 3
+          },
+          "gap": {
+            "found": 0,
+            "boxes": 1
+          },
+          "line_collapse": {
+            "found": 0,
+            "boxes": 4
+          },
+          "multi_bridge": {
+            "found": 1,
+            "boxes": 1
+          }
+        },
+        "clean_images_with_false_box": 0.0
+      }
+    },
+    "retinanet_pitch32_weighted": {
+      "settings": {
+        "model": "retinanet",
+        "images": "pitch32",
+        "sampling": "weighted",
+        "config": "configs/retinanet_pitch32_weighted.json",
+        "size": 640,
+        "native_pitch": true,
+        "tile_overlap": 320,
+        "resize_mode": "pad",
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    },
+    "retinanet_v2_weighted": {
+      "settings": {
+        "model": "retinanet",
+        "images": "v2",
+        "sampling": "weighted",
+        "config": "configs/retinanet_v2_weighted.json",
+        "size": 320,
+        "native_pitch": null,
+        "tile_overlap": null,
+        "resize_mode": "letterbox",
+        "sampling_power": 0.5,
+        "sampling_cap": 3.0,
+        "stage_a_epochs": 15,
+        "stage_b_epochs": 40,
+        "batch_size": 1,
+        "accumulation": 8,
+        "stage_a_lr": 0.0001,
+        "stage_b_head_lr": 5e-05,
+        "stage_b_encoder_lr": 5e-06,
+        "seed": 42
+      },
+      "cv": null,
+      "test": null,
+      "missing_cv": "not in outputs/cv5/summary/summary.json: run cv5.py for this setup",
+      "missing_test": "no final test metrics: run final_test.py for this setup"
+    }
+  },
+  "comparisons": [
+    {
+      "first": "yolos_pitch32_weighted_matched",
+      "second": "yolos_v2_weighted_matched",
+      "epochs": [
+        "B_011",
+        "B_020"
+      ],
+      "resamples": 2000,
+      "seed": 0,
+      "folds_won_by_first": 3,
+      "folds": 5,
+      "map": {
+        "difference": 0.032244366788996115,
+        "interval_95": [
+          -0.06717936663265174,
+          0.11436373384221726
+        ],
+        "share_first_better": 0.801,
+        "supported": false
+      },
+      "map50": {
+        "difference": 0.07717848397561838,
+        "interval_95": [
+          -0.05009754508586446,
+          0.19848219236295028
+        ],
+        "share_first_better": 0.9145,
+        "supported": false
+      }
+    }
+  ]
+}

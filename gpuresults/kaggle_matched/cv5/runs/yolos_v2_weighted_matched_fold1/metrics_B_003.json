@@ -1,0 +1,31 @@
+{
+  "stage": "B",
+  "epoch": 3,
+  "train_loss": 0.6356419566636576,
+  "training_presentations": 1386,
+  "optimizer_update_opportunities": 174,
+  "map": 0.01692559734546283,
+  "map50": 0.0741385373470932,
+  "per_class_ap": {
+    "bridge": {
+      "ap": 0.0012620011567379987,
+      "ap50": 0.004048582995951415,
+      "support": 1
+    },
+    "gap": {
+      "ap": 0.0,
+      "ap50": 0.0,
+      "support": 4
+    },
+    "line_collapse": {
+      "ap": 0.049514790879650494,
+      "ap50": 0.21836702904532818,
+      "support": 7
+    },
+    "multi_bridge": {
+      "ap": null,
+      "ap50": null,
+      "support": 0
+    }
+  }
+}
