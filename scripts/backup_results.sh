@@ -19,7 +19,8 @@ tar -czf "$ARCHIVE" \
   outputs $(ls ./*.log 2>/dev/null | sed 's#^\./##' || true)
 
 echo "Archive: $ARCHIVE ($(du -h "$ARCHIVE" | cut -f1), $(tar -tzf "$ARCHIVE" | wc -l) entries)"
-echo "Largest files:"; tar -tvzf "$ARCHIVE" | sort -k3 -n -r | head -8 | awk '{printf "  %8.1f MB  %s\n", $3/1e6, $6}'
+# head closes the pipe early; with pipefail that would count as a failure and stop the script, so ignore it here.
+echo "Largest files:"; { tar -tvzf "$ARCHIVE" | sort -k3 -n -r | head -8 | awk '{printf "  %8.1f MB  %s\n", $3/1e6, $6}'; } || true
 
 if [ "$PUSH" -eq 0 ]; then
   echo "Nothing pushed. Copy it to your PC with:  scp <user>@<this machine>:$ARCHIVE .   or rerun with --push."
