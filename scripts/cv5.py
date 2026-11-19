@@ -38,6 +38,18 @@ SETUPS = dict(
     # CNN baseline: same data, folds, schedule and weighting as SSD weighted; only the detector differs.
     retinanet_pitch32_weighted=dict(model='retinanet', data='pitch32', sampling='weighted', config='configs/retinanet_pitch32_weighted.json'),
     retinanet_v2_weighted=dict(model='retinanet', data='v2', sampling='weighted', config='configs/retinanet_v2_weighted.json'),
+    # Canvas ablation: original images on the same 640 px canvas as pitch32 (letterbox, no pitch scaling).
+    ssd_v2_weighted_640=dict(model='ssd', data='v2', sampling='weighted', config=f'{SSD_CONFIGS}/weighted_640.json'),
+    retinanet_v2_weighted_640=dict(model='retinanet', data='v2', sampling='weighted', config='configs/retinanet_v2_weighted_640.json'),
+    # Seed spread: the pitch32 and v2 weighted setups again with seeds 43 and 44.
+    ssd_pitch32_weighted_s43=dict(model='ssd', data='pitch32', sampling='weighted', seed=43, config=f'{SSD_CONFIGS}/pitch32_weighted.json'),
+    ssd_pitch32_weighted_s44=dict(model='ssd', data='pitch32', sampling='weighted', seed=44, config=f'{SSD_CONFIGS}/pitch32_weighted.json'),
+    ssd_v2_weighted_s43=dict(model='ssd', data='v2', sampling='weighted', seed=43, config=f'{SSD_CONFIGS}/weighted.json'),
+    ssd_v2_weighted_s44=dict(model='ssd', data='v2', sampling='weighted', seed=44, config=f'{SSD_CONFIGS}/weighted.json'),
+    retinanet_pitch32_weighted_s43=dict(model='retinanet', data='pitch32', sampling='weighted', seed=43, config='configs/retinanet_pitch32_weighted.json'),
+    retinanet_pitch32_weighted_s44=dict(model='retinanet', data='pitch32', sampling='weighted', seed=44, config='configs/retinanet_pitch32_weighted.json'),
+    retinanet_v2_weighted_s43=dict(model='retinanet', data='v2', sampling='weighted', seed=43, config='configs/retinanet_v2_weighted.json'),
+    retinanet_v2_weighted_s44=dict(model='retinanet', data='v2', sampling='weighted', seed=44, config='configs/retinanet_v2_weighted.json'),
 )
 # YOLOS peaked by stage B epoch 13 in every earlier run, and no fold may stop early.
 YOLOS_SCHEDULE = dict(stage_b_epochs=15, patience=999)
@@ -68,7 +80,7 @@ class Runs:
     def config(self, setup, fold):
         path = self.base/'configs'/f'{setup}_fold{fold}.json'
         config = read(ROOT/SETUPS[setup]['config'])
-        config.update(prepared=self.prepared(SETUPS[setup]['data'], fold), fixed_schedule=True)
+        config.update(prepared=self.prepared(SETUPS[setup]['data'], fold), fixed_schedule=True, seed=SETUPS[setup].get('seed', config.get('seed', 42)))
         config.update(schedule(setup))
         if self.quick:
             config.update(QUICK)
@@ -101,7 +113,7 @@ def train_one(runs, setup, fold, device):
     elif model == 'retinanet':
         command = [sys.executable, 'scripts/train_retinanet.py', '--config', config, '--sampling', SETUPS[setup]['sampling'], '--device', device, '--output', folder]
     else:
-        command = [ssd_python(), 'experiments/mobilevitv2_ssd/scripts/experiment.py', 'train', '--config', config, '--seed', '42',
+        command = [ssd_python(), 'experiments/mobilevitv2_ssd/scripts/experiment.py', 'train', '--config', config, '--seed', str(SETUPS[setup].get('seed', 42)),
                    '--device', device, '--precision', 'fp32', '--output', folder]
     command = [str(part) for part in command]+(['--resume'] if resume else [])
     print(f'=== {setup} fold {fold}: {"resuming" if resume else "starting"}', flush=True)
