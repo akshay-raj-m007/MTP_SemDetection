@@ -5,7 +5,7 @@
 #   bash scripts/backup_results.sh --push    # the same, then commits the files to gpu-results and pushes
 #
 # Kept: configs, logs, metrics, summaries, bootstrap files, out-of-fold and test predictions, review pictures.
-# Left out (large or rebuildable): model weights, per-epoch prediction dumps, prepared datasets, Python environments.
+# Left out (large or rebuildable): model weights, per-epoch prediction dumps, prepared datasets, Python environments, the upstream CVNets clone (it has its own .git).
 # gpu-results keeps the layout used before: gpuresults/outputs/... and gpuresults/*.log
 # No file over 90 MB is pushed (GitHub refuses 100 MB).
 set -euo pipefail
@@ -15,7 +15,7 @@ ARCHIVE="$HOME/ssl30_results_$(date +%Y%m%d_%H%M).tgz"
 
 tar -czf "$ARCHIVE" \
   --exclude='epoch_predictions' --exclude='*.pt' --exclude='*.pth' --exclude='*.safetensors' --exclude='*.ckpt' \
-  --exclude='prepared' --exclude='__pycache__' --exclude='env' --exclude='.venv' --exclude='venv' \
+  --exclude='prepared' --exclude='upstream' --exclude='.git' --exclude='__pycache__' --exclude='env' --exclude='.venv' --exclude='venv' \
   outputs $(ls ./*.log 2>/dev/null | sed 's#^\./##' || true)
 
 echo "Archive: $ARCHIVE ($(du -h "$ARCHIVE" | cut -f1), $(tar -tzf "$ARCHIVE" | wc -l) entries)"
