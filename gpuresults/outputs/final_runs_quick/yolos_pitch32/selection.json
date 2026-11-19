@@ -1,0 +1,8 @@
+{
+  "setup": "yolos_pitch32",
+  "stage_b_epoch": 12,
+  "cutoff": 0.5,
+  "cv_map": 0.16347717346547133,
+  "cv_map50": 0.2954446890255575,
+  "rule": "best pooled CV mAP epoch, fixed before the test run"
+}

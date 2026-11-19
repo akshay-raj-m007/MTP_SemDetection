@@ -1,0 +1,30 @@
+{
+  "first": "retinanet_pitch32_weighted",
+  "second": "retinanet_v2_weighted",
+  "epochs": [
+    "B_005",
+    "B_014"
+  ],
+  "units": 42,
+  "images": 82,
+  "resamples_used": 2000,
+  "seed": 0,
+  "folds_won_by_first": 3,
+  "folds": 5,
+  "map": {
+    "difference": 0.10258678631540008,
+    "interval_95": [
+      -0.003930418107429483,
+      0.17731571732962936
+    ],
+    "share_first_better": 0.969
+  },
+  "map50": {
+    "difference": 0.13085109733954914,
+    "interval_95": [
+      0.0020115469567471467,
+      0.24752573299646588
+    ],
+    "share_first_better": 0.9755
+  }
+}

@@ -1,0 +1,205 @@
+[transformers] You passed `num_labels=4` which is incompatible to the `id2label` map of length `91`.
+
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 211/211 [00:00<00:00, 19704.28it/s]
+[transformers] [1mYolosForObjectDetection LOAD REPORT[0m from: hustvl/yolos-tiny
+Key                                     | Status   |                                                                                        
+----------------------------------------+----------+----------------------------------------------------------------------------------------
+class_labels_classifier.layers.2.bias   | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([92]) vs model:torch.Size([5])          
+class_labels_classifier.layers.2.weight | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([92, 192]) vs model:torch.Size([5, 192])
+
+Notes:
+- MISMATCH:	ckpt weights were loaded, but they did not match the original empty weight shapes.
+Training: 66 source images, 1386 presentations/epoch, mode=original_plus_recipes, sampling=natural
+{'stage': 'A', 'names': ['class_labels_classifier.layers.0.weight', 'class_labels_classifier.layers.0.bias', 'class_labels_classifier.layers.1.weight', 'class_labels_classifier.layers.1.bias', 'class_labels_classifier.layers.2.weight', 'class_labels_classifier.layers.2.bias', 'bbox_predictor.layers.0.weight', 'bbox_predictor.layers.0.bias', 'bbox_predictor.layers.1.weight', 'bbox_predictor.layers.1.bias', 'bbox_predictor.layers.2.weight', 'bbox_predictor.layers.2.bias'], 'trainable_parameters': 149961, 'total_parameters': 6471945}
+{'stage': 'A', 'epoch': 1, 'train_loss': 1.7657983003474482, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.002262474565121188, 'map50': 0.005849580942029945, 'per_class_ap': {'bridge': {'ap': 0.005137258678861916, 'ap50': 0.012048192771084333, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.0016501650165016502, 'ap50': 0.005500550055005501, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 88.54it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 91.49it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 91.81it/s]
+{'stage': 'A', 'epoch': 2, 'train_loss': 0.8822842084995537, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.041125746561584256, 'map50': 0.08132904793747348, 'per_class_ap': {'bridge': {'ap': 0.027609427609427604, 'ap50': 0.03703703703703704, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.09576781207532517, 'ap50': 0.20695010677538342, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 43.37it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.96it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 55.04it/s]
+{'stage': 'A', 'epoch': 3, 'train_loss': 0.7996673324562994, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.039910167487336966, 'map50': 0.09991175588147048, 'per_class_ap': {'bridge': {'ap': 0.03393939393939394, 'ap50': 0.045454545454545484, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.08579110852261694, 'ap50': 0.25428072218986597, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 55.02it/s]
+{'stage': 'A', 'epoch': 4, 'train_loss': 0.7269416480653746, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.037629447818731454, 'map50': 0.07730237309445229, 'per_class_ap': {'bridge': {'ap': 0.024999999999999998, 'ap50': 0.04166666666666668, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.08788834345619437, 'ap50': 0.19024045261669026, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 44.33it/s]
+{'stage': 'A', 'epoch': 5, 'train_loss': 0.6964749753912629, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.02789685185961311, 'map50': 0.055439854330260614, 'per_class_ap': {'bridge': {'ap': 0.02954545454545455, 'ap50': 0.04999999999999999, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.0541451010333848, 'ap50': 0.11631956299078185, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.51it/s]
+{'stage': 'A', 'epoch': 6, 'train_loss': 0.650662606000221, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.031160477889894254, 'map50': 0.05422833950061673, 'per_class_ap': {'bridge': {'ap': 0.03333333333333334, 'ap50': 0.05555555555555556, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.060148100336349423, 'ap50': 0.10712946294629463, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.52it/s]
+{'stage': 'A', 'epoch': 7, 'train_loss': 0.640331957797971, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.053968544189010856, 'map50': 0.08872514794382642, 'per_class_ap': {'bridge': {'ap': 0.04029411764705883, 'ap50': 0.0588235294117647, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12161151491997375, 'ap50': 0.2073519144197146, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.86it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 56.69it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.54it/s]
+{'stage': 'A', 'epoch': 8, 'train_loss': 0.6251623494701186, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.06379202654880302, 'map50': 0.10272027828173687, 'per_class_ap': {'bridge': {'ap': 0.04957264957264956, 'ap50': 0.0769230769230769, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.14180343007375945, 'ap50': 0.2312377579221337, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.63it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.67it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 53.22it/s]
+{'stage': 'A', 'epoch': 9, 'train_loss': 0.5986220467948469, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.05830559537426585, 'map50': 0.10099667117121441, 'per_class_ap': {'bridge': {'ap': 0.05203619909502261, 'ap50': 0.0769230769230769, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12288058702777492, 'ap50': 0.22606693659056618, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 51.91it/s]
+{'stage': 'A', 'epoch': 10, 'train_loss': 0.5829580059108052, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.06287521934697239, 'map50': 0.10558722538920558, 'per_class_ap': {'bridge': {'ap': 0.06042780748663101, 'ap50': 0.09090909090909097, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12819785055428617, 'ap50': 0.22585258525852578, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.44it/s]
+{'stage': 'A', 'epoch': 11, 'train_loss': 0.5741776603173339, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.061885965535679724, 'map50': 0.10613015155221954, 'per_class_ap': {'bridge': {'ap': 0.06079545454545454, 'ap50': 0.09090909090909097, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12486244206158466, 'ap50': 0.2274813637475676, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.84it/s]
+{'stage': 'A', 'epoch': 12, 'train_loss': 0.5701188816617392, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.060138066140418854, 'map50': 0.10906613056402291, 'per_class_ap': {'bridge': {'ap': 0.06000000000000001, 'ap50': 0.09999999999999998, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12041419842125653, 'ap50': 0.22719839169206876, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.08it/s]
+{'stage': 'A', 'epoch': 13, 'train_loss': 0.5772341001729873, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.062449806445988035, 'map50': 0.10964255155674298, 'per_class_ap': {'bridge': {'ap': 0.06625, 'ap50': 0.09999999999999998, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12109941933796411, 'ap50': 0.22892765467022888, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 41.35it/s]
+{'stage': 'A', 'epoch': 14, 'train_loss': 0.5557278905258817, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.05789997462186306, 'map50': 0.10966685442885639, 'per_class_ap': {'bridge': {'ap': 0.06000000000000001, 'ap50': 0.09999999999999998, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.11369992386558918, 'ap50': 0.22900056328656915, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 55.48it/s]
+{'stage': 'A', 'epoch': 15, 'train_loss': 0.5645836178980389, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.057891225587902224, 'map50': 0.10964255155674298, 'per_class_ap': {'bridge': {'ap': 0.06000000000000001, 'ap50': 0.09999999999999998, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.11367367676370668, 'ap50': 0.22892765467022888, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 12.23it/s]
+
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 211/211 [00:00<00:00, 15021.35it/s]
+{'stage': 'B', 'names': ['vit.encoder.layer.10.attention.attention.query.weight', 'vit.encoder.layer.10.attention.attention.query.bias', 'vit.encoder.layer.10.attention.attention.key.weight', 'vit.encoder.layer.10.attention.attention.key.bias', 'vit.encoder.layer.10.attention.attention.value.weight', 'vit.encoder.layer.10.attention.attention.value.bias', 'vit.encoder.layer.10.attention.output.dense.weight', 'vit.encoder.layer.10.attention.output.dense.bias', 'vit.encoder.layer.10.intermediate.dense.weight', 'vit.encoder.layer.10.intermediate.dense.bias', 'vit.encoder.layer.10.output.dense.weight', 'vit.encoder.layer.10.output.dense.bias', 'vit.encoder.layer.10.layernorm_before.weight', 'vit.encoder.layer.10.layernorm_before.bias', 'vit.encoder.layer.10.layernorm_after.weight', 'vit.encoder.layer.10.layernorm_after.bias', 'vit.encoder.layer.11.attention.attention.query.weight', 'vit.encoder.layer.11.attention.attention.query.bias', 'vit.encoder.layer.11.attention.attention.key.weight', 'vit.encoder.layer.11.attention.attention.key.bias', 'vit.encoder.layer.11.attention.attention.value.weight', 'vit.encoder.layer.11.attention.attention.value.bias', 'vit.encoder.layer.11.attention.output.dense.weight', 'vit.encoder.layer.11.attention.output.dense.bias', 'vit.encoder.layer.11.intermediate.dense.weight', 'vit.encoder.layer.11.intermediate.dense.bias', 'vit.encoder.layer.11.output.dense.weight', 'vit.encoder.layer.11.output.dense.bias', 'vit.encoder.layer.11.layernorm_before.weight', 'vit.encoder.layer.11.layernorm_before.bias', 'vit.encoder.layer.11.layernorm_after.weight', 'vit.encoder.layer.11.layernorm_after.bias', 'vit.layernorm.weight', 'vit.layernorm.bias', 'class_labels_classifier.layers.0.weight', 'class_labels_classifier.layers.0.bias', 'class_labels_classifier.layers.1.weight', 'class_labels_classifier.layers.1.bias', 'class_labels_classifier.layers.2.weight', 'class_labels_classifier.layers.2.bias', 'bbox_predictor.layers.0.weight', 'bbox_predictor.layers.0.bias', 'bbox_predictor.layers.1.weight', 'bbox_predictor.layers.1.bias', 'bbox_predictor.layers.2.weight', 'bbox_predictor.layers.2.bias'], 'trainable_parameters': 1040073, 'total_parameters': 6471945}
+{'stage': 'B', 'epoch': 1, 'train_loss': 0.5695135520441806, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.06670036114553704, 'map50': 0.11754175417541753, 'per_class_ap': {'bridge': {'ap': 0.06875, 'ap50': 0.09999999999999998, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.1313510834366111, 'ap50': 0.2526252625262525, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 90.39it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 56.70it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 53.83it/s]
+{'stage': 'B', 'epoch': 2, 'train_loss': 0.5669473306455273, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.06394169416941692, 'map50': 0.11629446277961127, 'per_class_ap': {'bridge': {'ap': 0.0666666666666667, 'ap50': 0.11111111111111112, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12515841584158416, 'ap50': 0.2377722772277228, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 53.94it/s]
+{'stage': 'B', 'epoch': 3, 'train_loss': 0.56102935455475, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.07593338901014432, 'map50': 0.14047627588845837, 'per_class_ap': {'bridge': {'ap': 0.10526315789473682, 'ap50': 0.1666666666666667, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12253700913569616, 'ap50': 0.2547621609987085, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 49.73it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 56.96it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.03it/s]
+{'stage': 'B', 'epoch': 4, 'train_loss': 0.5409558948207236, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.07406202214424341, 'map50': 0.1471881970805776, 'per_class_ap': {'bridge': {'ap': 0.09444444444444444, 'ap50': 0.1666666666666667, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12774162198828576, 'ap50': 0.27489792457506607, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 53.54it/s]
+{'stage': 'B', 'epoch': 5, 'train_loss': 0.5286785200068812, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.0799444552298367, 'map50': 0.14641169999352877, 'per_class_ap': {'bridge': {'ap': 0.10555555555555553, 'ap50': 0.1666666666666667, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.13427781013395454, 'ap50': 0.27256843331391956, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 57.47it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 49.96it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 55.40it/s]
+{'stage': 'B', 'epoch': 6, 'train_loss': 0.5281981536612492, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.08346874016385794, 'map50': 0.16224705415555532, 'per_class_ap': {'bridge': {'ap': 0.11333333333333336, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.1370728871582405, 'ap50': 0.28674116246666603, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.06it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 56.16it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 50.56it/s]
+{'stage': 'B', 'epoch': 7, 'train_loss': 0.5093620821041885, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.07620905788057797, 'map50': 0.15796932634439914, 'per_class_ap': {'bridge': {'ap': 0.10588235294117648, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12274482070055744, 'ap50': 0.2739079790331974, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 50.26it/s]
+{'stage': 'B', 'epoch': 8, 'train_loss': 0.5040338062078813, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.07647989798979897, 'map50': 0.1598059805980598, 'per_class_ap': {'bridge': {'ap': 0.10666666666666669, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.12277302730273026, 'ap50': 0.27941794179417934, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.65it/s]
+{'stage': 'B', 'epoch': 9, 'train_loss': 0.5106720426020751, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.08836740618506296, 'map50': 0.1645764576457646, 'per_class_ap': {'bridge': {'ap': 0.12625000000000003, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.13885221855518884, 'ap50': 0.29372937293729373, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.66it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 51.78it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 53.62it/s]
+{'stage': 'B', 'epoch': 10, 'train_loss': 0.489166100881494, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.08591272460579392, 'map50': 0.16516318298496513, 'per_class_ap': {'bridge': {'ap': 0.12666666666666668, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.13107150715071508, 'ap50': 0.2954895489548955, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.65it/s]
+{'stage': 'B', 'epoch': 11, 'train_loss': 0.4942959079346916, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.08993893721355942, 'map50': 0.16452078406221188, 'per_class_ap': {'bridge': {'ap': 0.12666666666666668, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.14315014497401155, 'ap50': 0.2935623521866356, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.54it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.51it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.84it/s]
+{'stage': 'B', 'epoch': 12, 'train_loss': 0.4843156164982655, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.08836817015034835, 'map50': 0.16516318298496513, 'per_class_ap': {'bridge': {'ap': 0.12666666666666668, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.13843784378437843, 'ap50': 0.2954895489548955, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.04it/s]
+{'stage': 'B', 'epoch': 13, 'train_loss': 0.4850658869453258, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.08833348199684832, 'map50': 0.16498974221746496, 'per_class_ap': {'bridge': {'ap': 0.12666666666666668, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.13833377932387833, 'ap50': 0.294969226652395, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 55.63it/s]
+{'stage': 'B', 'epoch': 14, 'train_loss': 0.48526627275056117, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.09049533900758495, 'map50': 0.16515546291471253, 'per_class_ap': {'bridge': {'ap': 0.12666666666666668, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.14481935035608823, 'ap50': 0.29546638874413755, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 54.50it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 52.42it/s]
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 53.41it/s]
+{'stage': 'B', 'epoch': 15, 'train_loss': 0.475878100258166, 'training_presentations': 1386, 'optimizer_update_opportunities': 174, 'map': 0.09049533900758495, 'map50': 0.16515546291471253, 'per_class_ap': {'bridge': {'ap': 0.12666666666666668, 'ap50': 0.19999999999999996, 'support': 1}, 'gap': {'ap': 0.0, 'ap50': 0.0, 'support': 4}, 'line_collapse': {'ap': 0.14481935035608823, 'ap50': 0.29546638874413755, 'support': 7}, 'multi_bridge': {'ap': None, 'ap50': None, 'support': 0}}}
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 53.97it/s]
+Best model: /home/ssl30/Music/mtp/MTP_ViT/outputs/cv5/runs/yolos_pitch32_fold1/best. Select confidence threshold on validation before test/inference.

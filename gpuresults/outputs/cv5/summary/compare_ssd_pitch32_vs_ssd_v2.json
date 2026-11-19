@@ -1,0 +1,30 @@
+{
+  "first": "ssd_pitch32",
+  "second": "ssd_v2",
+  "epochs": [
+    "B_037",
+    "B_015"
+  ],
+  "units": 42,
+  "images": 82,
+  "resamples_used": 2000,
+  "seed": 0,
+  "folds_won_by_first": 3,
+  "folds": 5,
+  "map": {
+    "difference": 0.03531480373607457,
+    "interval_95": [
+      -0.004584822868990532,
+      0.07658737050959503
+    ],
+    "share_first_better": 0.952
+  },
+  "map50": {
+    "difference": 0.17693060952128364,
+    "interval_95": [
+      0.08739705154900526,
+      0.2519816387744425
+    ],
+    "share_first_better": 1.0
+  }
+}

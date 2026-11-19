@@ -1,0 +1,10 @@
+file,gt_class,gt_bbox,verdict,best_score_iou50,best_same_class_iou,score_at_best_iou,wrong_class,wrong_class_score_iou50
+3de709e3-fig20.jpg,line_collapse,"[299.0, 171.6, 67.7, 213.0]",poorly_localised,0.0,0.159,0.2393,,
+43e08f23-fig5.jpg,multi_bridge,"[125.9, 138.7, 99.9, 128.1]",wrong_class:gap,0.0,0.386,0.2459,gap,0.2672
+4dec1c5f-fig42.jpg,line_collapse,"[307.9, 180.3, 65.4, 163.5]",missed,0.0,0.0,0.2497,,
+753e8e60-fig25.jpg,line_collapse,"[261.3, 262.6, 74.3, 153.6]",missed,0.0,0.0,0.2573,,
+753e8e60-fig25.jpg,line_collapse,"[325.7, 247.8, 74.3, 167.2]",wrong_class:gap,0.0,0.0,0.2573,gap,0.3038
+add3881f-fig91.jpg,gap,"[41.2, 34.2, 22.8, 41.6]",poorly_localised,0.0,0.138,0.2199,,
+c44668f5-fig7.jpg,bridge,"[118.4, 137.7, 71.0, 102.2]",missed,0.0,0.0,0.0,,
+d56b00d9-fig43.jpg,bridge,"[141.6, 74.7, 75.3, 110.6]",missed,0.0,0.0,0.0,,
+e660164b-fig12.jpg,bridge,"[91.8, 70.0, 72.7, 126.9]",wrong_class:gap,0.0,0.0,0.0,gap,0.3361

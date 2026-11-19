@@ -1,0 +1,8 @@
+{
+  "setup": "retinanet_pitch32_weighted",
+  "stage_b_epoch": 5,
+  "cutoff": 0.5,
+  "cv_map": 0.5206066099423692,
+  "cv_map50": 0.8138501896950897,
+  "rule": "best pooled CV mAP epoch, fixed before the test run"
+}

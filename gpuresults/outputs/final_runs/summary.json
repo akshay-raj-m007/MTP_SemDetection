@@ -1,0 +1,68 @@
+[
+  {
+    "setup": "ssd_v2",
+    "stage_b_epoch": 15,
+    "cv_map": 0.13347321662188774,
+    "cv_map50": 0.2510379168427127,
+    "test_map": 0.04248845959074086,
+    "test_map50": 0.08120281786243141,
+    "correct": 2,
+    "boxes": 9,
+    "false_boxes": 29
+  },
+  {
+    "setup": "yolos_pitch32",
+    "stage_b_epoch": 12,
+    "cv_map": 0.16347717346547133,
+    "cv_map50": 0.2954446890255575,
+    "test_map": 0.033103921490686014,
+    "test_map50": 0.08055506443501494,
+    "correct": 0,
+    "boxes": 9,
+    "false_boxes": 5
+  },
+  {
+    "setup": "yolos_v2",
+    "stage_b_epoch": 15,
+    "cv_map": 0.1741886786844861,
+    "cv_map50": 0.28298861808419584,
+    "test_map": 0.0543436362867056,
+    "test_map50": 0.09665841584158415,
+    "correct": 1,
+    "boxes": 9,
+    "false_boxes": 4
+  },
+  {
+    "setup": "yolos_v2_weighted",
+    "stage_b_epoch": 2,
+    "cv_map": 0.16825092713676132,
+    "cv_map50": 0.25957246431373,
+    "test_map": 0.08408688607477001,
+    "test_map50": 0.1616354024161198,
+    "correct": 1,
+    "boxes": 9,
+    "false_boxes": 5
+  },
+  {
+    "setup": "retinanet_pitch32_weighted",
+    "stage_b_epoch": 5,
+    "cv_map": 0.5206066099423692,
+    "cv_map50": 0.8138501896950897,
+    "test_map": 0.6917432814710042,
+    "test_map50": 0.8624174917491749,
+    "correct": 6,
+    "boxes": 9,
+    "false_boxes": 9
+  },
+  {
+    "setup": "retinanet_v2_weighted",
+    "stage_b_epoch": 14,
+    "cv_map": 0.4180198236269691,
+    "cv_map50": 0.6829990923555406,
+    "test_map": 0.4463010440093001,
+    "test_map50": 0.6889626462646266,
+    "correct": 7,
+    "boxes": 9,
+    "false_boxes": 7
+  }
+]

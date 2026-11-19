@@ -1,0 +1,8 @@
+{
+  "setup": "yolos_v2_weighted",
+  "stage_b_epoch": 2,
+  "cutoff": 0.5,
+  "cv_map": 0.16825092713676132,
+  "cv_map50": 0.25957246431373,
+  "rule": "best pooled CV mAP epoch, fixed before the test run"
+}

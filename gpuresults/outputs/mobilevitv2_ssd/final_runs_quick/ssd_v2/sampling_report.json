@@ -1,0 +1,30 @@
+{
+  "sampling": "natural",
+  "unique_images": 82,
+  "presentations_per_epoch": 82,
+  "training_view_mode": "random_augmented",
+  "views_per_image": 1,
+  "augmentation_recipes": [],
+  "image_class_counts": {
+    "bridge": 19,
+    "gap": 6,
+    "line_collapse": 17,
+    "multi_bridge": 9
+  },
+  "box_class_counts": {
+    "line_collapse": 17,
+    "bridge": 22,
+    "multi_bridge": 9,
+    "gap": 13
+  },
+  "weight_min": 1.0,
+  "weight_max": 1.0,
+  "strategy": "maximum capped inverse image-presence frequency raised to power",
+  "expected_clean_fraction": 0.3780487804878049,
+  "expected_class_presentations": {
+    "bridge": 19.0,
+    "gap": 6.0,
+    "line_collapse": 17.0,
+    "multi_bridge": 9.0
+  }
+}

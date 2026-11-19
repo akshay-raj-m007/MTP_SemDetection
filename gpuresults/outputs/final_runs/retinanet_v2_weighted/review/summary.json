@@ -1,0 +1,21 @@
+{
+  "predictions": "/home/ssl30/Music/mtp/MTP_ViT/outputs/final_runs/retinanet_v2_weighted/run/eval_test/predictions.json",
+  "split": "test",
+  "min_score": 0.05,
+  "threshold": 0.5,
+  "images": 13,
+  "gt_verdicts": {
+    "line_collapse": {
+      "found": 4
+    },
+    "multi_bridge": {
+      "found": 1
+    },
+    "gap": {
+      "found": 1
+    },
+    "bridge": {
+      "found": 3
+    }
+  }
+}

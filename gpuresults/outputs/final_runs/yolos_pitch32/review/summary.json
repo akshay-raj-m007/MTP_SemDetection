@@ -1,0 +1,22 @@
+{
+  "predictions": "/home/ssl30/Music/mtp/MTP_ViT/outputs/final_runs/yolos_pitch32/run/eval_test/predictions.json",
+  "split": "test",
+  "min_score": 0.05,
+  "threshold": 0.5,
+  "images": 13,
+  "gt_verdicts": {
+    "line_collapse": {
+      "wrong_class": 1,
+      "found": 3
+    },
+    "multi_bridge": {
+      "found": 1
+    },
+    "gap": {
+      "missed": 1
+    },
+    "bridge": {
+      "found": 3
+    }
+  }
+}

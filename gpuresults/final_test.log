@@ -1,0 +1,345 @@
+===== ssd_v2: stage B epoch 15 from CV (CV mAP 0.133), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage B epoch  1
+TEST  mAP 0.002  mAP50 0.011
+  bridge         AP 0.000  AP50 0.001
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.006  AP50 0.025
+  multi_bridge   AP 0.004  AP50 0.018
+At score 0.5: 1 correct of 9 boxes, 54 false boxes. Clean images with a false box: 0.80
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  1 of 4
+  multi_bridge   0 of 1
+Drawings: outputs/final_runs_quick/ssd_v2/review
+===== yolos_pitch32: stage B epoch 12 from CV (CV mAP 0.163), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage B epoch  1
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 18637.82it/s]
+TEST  mAP 0.000  mAP50 0.000
+  bridge         AP 0.000  AP50 0.000
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.000  AP50 0.000
+  multi_bridge   AP 0.000  AP50 0.000
+At score 0.5: 0 correct of 9 boxes, 0 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   0 of 1
+Drawings: outputs/final_runs_quick/yolos_pitch32/review
+===== yolos_v2: stage B epoch 15 from CV (CV mAP 0.174), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage B epoch  1
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 20300.92it/s]
+TEST  mAP 0.000  mAP50 0.000
+  bridge         AP 0.000  AP50 0.000
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.000  AP50 0.000
+  multi_bridge   AP 0.000  AP50 0.000
+At score 0.5: 0 correct of 9 boxes, 0 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   0 of 1
+Drawings: outputs/final_runs_quick/yolos_v2/review
+===== yolos_v2_weighted: stage B epoch 2 from CV (CV mAP 0.168), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage B epoch  1
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 21929.24it/s]
+TEST  mAP 0.000  mAP50 0.000
+  bridge         AP 0.000  AP50 0.000
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.000  AP50 0.000
+  multi_bridge   AP 0.000  AP50 0.000
+At score 0.5: 0 correct of 9 boxes, 0 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   0 of 1
+Drawings: outputs/final_runs_quick/yolos_v2_weighted/review
+===== retinanet_pitch32_weighted: stage B epoch 5 from CV (CV mAP 0.521), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage B epoch  1
+TEST  mAP 0.001  mAP50 0.003
+  bridge         AP 0.000  AP50 0.000
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.004  AP50 0.010
+  multi_bridge   AP 0.000  AP50 0.000
+At score 0.5: 0 correct of 9 boxes, 0 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   0 of 1
+Drawings: outputs/final_runs_quick/retinanet_pitch32_weighted/review
+===== retinanet_v2_weighted: stage B epoch 14 from CV (CV mAP 0.418), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage B epoch  1
+TEST  mAP 0.001  mAP50 0.003
+  bridge         AP 0.000  AP50 0.000
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.003  AP50 0.011
+  multi_bridge   AP 0.000  AP50 0.000
+At score 0.5: 0 correct of 9 boxes, 0 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   0 of 1
+Drawings: outputs/final_runs_quick/retinanet_v2_weighted/review
+
+setup                       epoch  CV mAP  CV mAP50  test mAP  test mAP50  correct  false
+ssd_v2                      B_015  0.133   0.251     0.002     0.011      1/9     54
+yolos_pitch32               B_012  0.163   0.295     0.000     0.000      0/9     0
+yolos_v2                    B_015  0.174   0.283     0.000     0.000      0/9     0
+yolos_v2_weighted           B_002  0.168   0.260     0.000     0.000      0/9     0
+retinanet_pitch32_weighted  B_005  0.521   0.814     0.001     0.003      0/9     0
+retinanet_v2_weighted       B_014  0.418   0.683     0.001     0.003      0/9     0
+FINAL TESTS ENDED WITH NO FAILURES
+===== ssd_v2: stage B epoch 15 from CV (CV mAP 0.133), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage A epoch  2
+final stage A epoch  3
+final stage A epoch  4
+final stage A epoch  5
+final stage A epoch  6
+final stage A epoch  7
+final stage A epoch  8
+final stage A epoch  9
+final stage A epoch 10
+final stage A epoch 11
+final stage A epoch 12
+final stage A epoch 13
+final stage A epoch 14
+final stage A epoch 15
+final stage B epoch  1
+final stage B epoch  2
+final stage B epoch  3
+final stage B epoch  4
+final stage B epoch  5
+final stage B epoch  6
+final stage B epoch  7
+final stage B epoch  8
+final stage B epoch  9
+final stage B epoch 10
+final stage B epoch 11
+final stage B epoch 12
+final stage B epoch 13
+final stage B epoch 14
+final stage B epoch 15
+TEST  mAP 0.042  mAP50 0.081
+  bridge         AP 0.010  AP50 0.023
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.010  AP50 0.051
+  multi_bridge   AP 0.150  AP50 0.250
+At score 0.5: 2 correct of 9 boxes, 29 false boxes. Clean images with a false box: 0.60
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  1 of 4
+  multi_bridge   1 of 1
+Drawings: outputs/final_runs/ssd_v2/review
+===== yolos_pitch32: stage B epoch 12 from CV (CV mAP 0.163), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage A epoch  2
+final stage A epoch  3
+final stage A epoch  4
+final stage A epoch  5
+final stage A epoch  6
+final stage A epoch  7
+final stage A epoch  8
+final stage A epoch  9
+final stage A epoch 10
+final stage A epoch 11
+final stage A epoch 12
+final stage A epoch 13
+final stage A epoch 14
+final stage A epoch 15
+final stage B epoch  1
+final stage B epoch  2
+final stage B epoch  3
+final stage B epoch  4
+final stage B epoch  5
+final stage B epoch  6
+final stage B epoch  7
+final stage B epoch  8
+final stage B epoch  9
+final stage B epoch 10
+final stage B epoch 11
+final stage B epoch 12
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 21317.04it/s]
+TEST  mAP 0.033  mAP50 0.081
+  bridge         AP 0.085  AP50 0.193
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.003  AP50 0.018
+  multi_bridge   AP 0.044  AP50 0.111
+At score 0.5: 0 correct of 9 boxes, 5 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   0 of 1
+Drawings: outputs/final_runs/yolos_pitch32/review
+===== yolos_v2: stage B epoch 15 from CV (CV mAP 0.174), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage A epoch  2
+final stage A epoch  3
+final stage A epoch  4
+final stage A epoch  5
+final stage A epoch  6
+final stage A epoch  7
+final stage A epoch  8
+final stage A epoch  9
+final stage A epoch 10
+final stage A epoch 11
+final stage A epoch 12
+final stage A epoch 13
+final stage A epoch 14
+final stage A epoch 15
+final stage B epoch  1
+final stage B epoch  2
+final stage B epoch  3
+final stage B epoch  4
+final stage B epoch  5
+final stage B epoch  6
+final stage B epoch  7
+final stage B epoch  8
+final stage B epoch  9
+final stage B epoch 10
+final stage B epoch 11
+final stage B epoch 12
+final stage B epoch 13
+final stage B epoch 14
+final stage B epoch 15
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 19988.67it/s]
+TEST  mAP 0.054  mAP50 0.097
+  bridge         AP 0.062  AP50 0.137
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.000  AP50 0.000
+  multi_bridge   AP 0.155  AP50 0.250
+At score 0.5: 1 correct of 9 boxes, 4 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   1 of 1
+Drawings: outputs/final_runs/yolos_v2/review
+===== yolos_v2_weighted: stage B epoch 2 from CV (CV mAP 0.168), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage A epoch  2
+final stage A epoch  3
+final stage A epoch  4
+final stage A epoch  5
+final stage A epoch  6
+final stage A epoch  7
+final stage A epoch  8
+final stage A epoch  9
+final stage A epoch 10
+final stage A epoch 11
+final stage A epoch 12
+final stage A epoch 13
+final stage A epoch 14
+final stage A epoch 15
+final stage B epoch  1
+final stage B epoch  2
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 22808.05it/s]
+TEST  mAP 0.084  mAP50 0.162
+  bridge         AP 0.235  AP50 0.447
+  gap            AP 0.000  AP50 0.000
+  line_collapse  AP 0.000  AP50 0.000
+  multi_bridge   AP 0.101  AP50 0.200
+At score 0.5: 1 correct of 9 boxes, 5 false boxes. Clean images with a false box: 0.00
+  bridge         0 of 3
+  gap            0 of 1
+  line_collapse  0 of 4
+  multi_bridge   1 of 1
+Drawings: outputs/final_runs/yolos_v2_weighted/review
+===== retinanet_pitch32_weighted: stage B epoch 5 from CV (CV mAP 0.521), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage A epoch  2
+final stage A epoch  3
+final stage A epoch  4
+final stage A epoch  5
+final stage A epoch  6
+final stage A epoch  7
+final stage A epoch  8
+final stage A epoch  9
+final stage A epoch 10
+final stage A epoch 11
+final stage A epoch 12
+final stage A epoch 13
+final stage A epoch 14
+final stage A epoch 15
+final stage B epoch  1
+final stage B epoch  2
+final stage B epoch  3
+final stage B epoch  4
+final stage B epoch  5
+TEST  mAP 0.692  mAP50 0.862
+  bridge         AP 0.866  AP50 1.000
+  gap            AP 0.700  AP50 1.000
+  line_collapse  AP 0.301  AP50 0.450
+  multi_bridge   AP 0.900  AP50 1.000
+At score 0.5: 6 correct of 9 boxes, 9 false boxes. Clean images with a false box: 0.00
+  bridge         3 of 3
+  gap            1 of 1
+  line_collapse  1 of 4
+  multi_bridge   1 of 1
+Drawings: outputs/final_runs/retinanet_pitch32_weighted/review
+===== retinanet_v2_weighted: stage B epoch 14 from CV (CV mAP 0.418), cutoff 0.5
+=== final training: starting
+final stage A epoch  1
+final stage A epoch  2
+final stage A epoch  3
+final stage A epoch  4
+final stage A epoch  5
+final stage A epoch  6
+final stage A epoch  7
+final stage A epoch  8
+final stage A epoch  9
+final stage A epoch 10
+final stage A epoch 11
+final stage A epoch 12
+final stage A epoch 13
+final stage A epoch 14
+final stage A epoch 15
+final stage B epoch  1
+final stage B epoch  2
+final stage B epoch  3
+final stage B epoch  4
+final stage B epoch  5
+final stage B epoch  6
+final stage B epoch  7
+final stage B epoch  8
+final stage B epoch  9
+final stage B epoch 10
+final stage B epoch 11
+final stage B epoch 12
+final stage B epoch 13
+final stage B epoch 14
+TEST  mAP 0.446  mAP50 0.689
+  bridge         AP 0.512  AP50 0.834
+  gap            AP 0.009  AP50 0.045
+  line_collapse  AP 0.564  AP50 0.876
+  multi_bridge   AP 0.700  AP50 1.000
+At score 0.5: 7 correct of 9 boxes, 7 false boxes. Clean images with a false box: 0.00
+  bridge         3 of 3
+  gap            0 of 1
+  line_collapse  3 of 4
+  multi_bridge   1 of 1
+Drawings: outputs/final_runs/retinanet_v2_weighted/review
+
+setup                       epoch  CV mAP  CV mAP50  test mAP  test mAP50  correct  false
+ssd_v2                      B_015  0.133   0.251     0.042     0.081      2/9     29
+yolos_pitch32               B_012  0.163   0.295     0.033     0.081      0/9     5
+yolos_v2                    B_015  0.174   0.283     0.054     0.097      1/9     4
+yolos_v2_weighted           B_002  0.168   0.260     0.084     0.162      1/9     5
+retinanet_pitch32_weighted  B_005  0.521   0.814     0.692     0.862      6/9     9
+retinanet_v2_weighted       B_014  0.418   0.683     0.446     0.689      7/9     7
+FINAL TESTS ENDED WITH NO FAILURES
